@@ -21,7 +21,8 @@ def main():
     #sys.exit(0)
     try:
         ss = Session(hostname=args.hostname, community=args.community, version=args.version)
-        firmware = ss.get('1.3.6.1.4.1.12356.101.4.1.1.0').value[1:7]
+        firmwareLong = ss.get('1.3.6.1.4.1.12356.101.4.1.1.0').value
+        firmware = firmwareLong[1:7]
         firmware = firmware if firmware[5] != "," else firmware[0:5] # chop trailing "," if minor Version <9
     except Exception as e:
         print("ERROR: ", end="")
@@ -53,11 +54,11 @@ def main():
             print("Key not Found")
             sys.exit(3)
     if len(retval1) != 0 or len(retval2) != 0:
-        print("CRITICAL: Vulnerabilities found for " + (firmware) , end=" ")
+        print("CRITICAL: Vulnerabilities found for " + (firmwareLong) , end=" ")
         print(retval1 + retval2)
         sys.exit(2)
     else:
-        print("OK: No vulnerability found for " + firmware)
+        print("OK: No vulnerability found for " + firmwareLong)
         sys.exit(0)
 
 if __name__ == '__main__':
