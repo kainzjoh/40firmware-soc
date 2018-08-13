@@ -20,7 +20,7 @@ def main():
     #print("DEBUG: " + args.Hostname, args.version, args.port, args.community)
     #sys.exit(0)
     try:
-        ss = Session(hostname=args.Hostname, community=args.community, version=args.version)
+        ss = Session(hostname=args.hostname, community=args.community, version=args.version)
         firmware = ss.get('1.3.6.1.4.1.12356.101.4.1.1.0').value[1:7]
         firmware = firmware if firmware[5] != "," else firmware[0:5] # chop trailing "," if minor Version <9
     except Exception as e:
