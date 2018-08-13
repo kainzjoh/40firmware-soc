@@ -11,7 +11,7 @@ from easysnmp import Session
 def main():
     # ./main.py -c abc123123 -p 161 -v 2 firewall01.corp.company.com
     parser = argparse.ArgumentParser()
-    parser.add_argument("-h", "--hostname", help="Hostname")
+    parser.add_argument("-host","--hostname", help="Hostname", default="localhost")
     parser.add_argument("-v","--version", type=int, choices=[1, 2], help="Version 1 or 2", default=2)
     parser.add_argument("-p","--port", type=int, help="Specify port to use", default=161)
     parser.add_argument("-c","--community", help="Specify Community to use", default="public")
