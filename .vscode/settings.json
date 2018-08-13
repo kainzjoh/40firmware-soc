@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/Users/kainzjoh/.local/share/virtualenvs/40fimware-TiSN2NbD/bin/python",
+    "python.unitTest.promptToConfigure": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false
+}
