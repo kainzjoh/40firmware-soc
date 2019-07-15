@@ -3,4 +3,4 @@ chardet==3.0.4
 easysnmp==0.2.5
 idna==2.7
 requests
-urllib3==1.23
+urllib3
